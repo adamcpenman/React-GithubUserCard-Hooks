@@ -10,7 +10,7 @@ function UserCard(props) {
       <p>Bio: {props.bio} </p>
       <p>Followers: {props.followers}</p>
       <p>Following: {props.following}</p>
-      {/* {/* {props.children} */}
+      {props.children}
     </div>
   );
 }

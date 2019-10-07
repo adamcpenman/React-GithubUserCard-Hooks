@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import UserCard from "./userCard";
-import { tsPropertySignature } from "@babel/types";
 
 function User() {
-  const [userList, setUserList] = useState([]);
+  const [userList, setUserList] = useState("adamcpenman");
   const [userPic, setuserPic] = useState();
   const [userLogin, setUserLogin] = useState([]);
   const [userLocation, setUserLocation] = useState([]);
@@ -14,7 +13,7 @@ function User() {
   useEffect(() => {
     // const axiosUser = () => {
     axios
-      .get("https://api.github.com/users/adamcpenman")
+      .get(`https://api.github.com/users/${userList}`)
       .then(response => {
         setUserList(response.data.name);
         setuserPic(response.data.avatar_url);
